@@ -1,0 +1,228 @@
+#include<stdio.h>
+void main()
+{int A,i=1;
+printf ("welcome to ultimate c program, it's a program compilation of 10 programs which are\n1.Check if two values are equall\n2.Entered number is odd or even\n3.To find largest\n4.Is alphabet no. Or special char\n5.Calculator app\n6.Calculate area,circumference,perimeter\n7.To calculate factorial\n8.To calculate sum\n9.To reverse a number\n10.To print pattern");
+ printf("\nenter the number against the program you want to execute to begin");
+ scanf("%d",&A);
+ {switch(A)
+ {case 1 : printf("\nTo check if two numbers are equal or not");
+          float num1,num2;
+           printf("\nEnter two numbers");
+           scanf("%f%f",&num1,&num2);
+           if (num1==num2)
+           {printf("entered numbers are equal");}
+           else
+           {printf("entered numbers are not equal");}
+           break;
+  
+  case 2 : printf("\nTo check if entered number is odd or even");
+           int x;
+           printf("\nEnter a integer value to check for");
+           scanf("%d",&x);
+           if (x%2==0)
+           {printf("entered number is even");}
+           else
+           {printf("entered number is odd");}
+           break;
+           
+  case 3 : printf("\nTo find largest of any 3 numbers");
+           int larg1,larg2,larg3;
+           printf("\nEnter any three integer values");
+           scanf("%d%d%d",&larg1,&larg2,&larg3);
+           if((larg1>larg2)&&(larg1>larg3))
+           {printf("largest number is %d", larg1);}
+           
+           else if((larg2>larg1)&&(larg2>larg3))
+           {printf("largest number is %d",larg2);}
+           
+           else
+           {printf("largest number is %d", larg3);}
+           break;
+           
+  case 4 : printf("\nTo check if the entered character is a number or alphabet");        
+           char ch;
+           printf("\nEnter a character");
+           scanf(" %c", &ch);
+    
+           if ((ch >= '0') && (ch <= '9'))
+           {printf("\nEntered character is a number");} 
+           else 
+           {printf("\nEntered character is an alphabet");}
+           break;
+           
+  case 5 : printf("Calculator application");
+           float w,s,result;
+           int d ; 
+           printf("\nenter two values for performing operations ");
+           scanf("%f%f",&w,&s);
+           printf("enter 1 for addition\nenter 2 for subtraction\nenter 3 for multiplication\nenter 4 for division");
+           scanf("%d",&d);
+           switch(d)
+           
+           { case 1 : result = w+s;
+                      printf("result is %f", result);
+                      break;
+                      
+              case 2 : result = w-s;
+                      printf("result is %f", result);
+                      break;
+                      
+               case 3 : result = w*s;
+                      printf("result is %f", result);
+                      break;
+                  
+                 case 4 : result = w/s;
+                      printf("result is %f", result);
+                      break;
+                      
+                   default : printf("Invalid input");   
+                   
+                   }
+                   break;
+                   
+  case 6 : printf("To calculate area circumference or perimeters of different mathematical shapes");
+           int sqr, sqrArea,sqrPeri,rect1,rect2,rectArea,rectPeri,hgt,side1,side2,side3,triArea,triPeri,cirArea,cirPeri,z;
+           float r; 
+           
+           printf("\nFor a square");
+           printf("\nPress 1 for area and for perimeter ");   
+           printf("\nFor a rectangle");     
+           printf("\nPress 2 for area and for perimeter");
+           printf("\nFor a triangle");
+           printf("\nPress 3 for area and for perimeter");
+           printf("\nFor a circle");
+           printf("\nPress 4 for area and for circumference");
+           printf("\nNow enter your number");
+           scanf("%d", &z);
+           
+           
+           switch(z)
+           {case 1 : printf("\nenter dimension");
+                     scanf("%d", &sqr);
+                     sqrArea = sqr*sqr;
+                     sqrPeri = 4*sqr;
+                     printf("\nArea of the square is %d",sqrArea);
+                     printf("\nPerimeter of the square is %d", sqrPeri);
+                     break;
+                     
+             case 2 : printf("\nenter length and breadth");
+                     scanf("%d%d", &rect1,&rect2);
+                     rectArea = rect1*rect2;
+                     rectPeri = 2*(rect1+rect2);
+                     printf("\nArea of the rectangle is %d",rectArea);
+                     printf("\nPerimeter of the rectangle is %d", rectPeri);
+                     break;
+                     
+              case 3 : printf("\nenter height and all sides dimensions taking side 1 as base");
+                     scanf("%d%d%d%d", &hgt,&side1,&side2,&side3);
+                     triArea = 0.5*hgt*side1;
+                     triPeri = side1+side2+side3;
+                     printf("\nArea of the Triangle is %d",triArea);
+                     printf("\nPerimeter of the Triangle is %d", triPeri);
+                     break;
+                     
+               case 4 : printf("\nenter radius");
+                     scanf("%f", &r);
+                     cirArea = 3.14*r*r;
+                     cirPeri = 6.28*r;
+                     printf("\nArea of the Circle is %d",cirArea);
+                     printf("\nPerimeter of the Circle is %d", cirPeri);
+                     break;
+                     
+                  default : printf("Invalid input");}
+                  
+                  break;
+                     
+                     
+  case 7 :  printf("To calculate factorial of a number");  
+            int n,fact=1;
+            printf("\nEnter a number to find the factorial of : ");
+            scanf("%d",&n);
+            
+            if (n==0)
+            {printf("factorial is 1");}
+            
+            while(n>=1)
+            {fact = fact*n;
+            n--;}
+            printf("\nfactorial of the number is %d",fact);
+            break;
+            
+            
+  case 8 : printf("To calculate sum of a number");   
+           int U , sum=0 , rem;
+           printf("\nEnter your number");
+           scanf("%d",&U);
+           while(U>0)
+           {rem=U%10;
+           sum = sum+rem;
+           U=U/10;}
+           printf("\nSum of the number is %d",sum);
+           
+           
+  case 9 : printf("To reverse a number");
+           int Y,rev=0, rem2; 
+           printf("\nEnter your number");
+           scanf("%d",&Y);
+           while(Y>0)
+           {rem2=Y%10;
+           rev = rev*10+rem2;
+           Y=Y/10;} 
+           printf("\nReverse of the number is %d",rev); 
+           
+           
+  case 10 : printf("To calculate Star patterns ");    
+            printf("Press 1 for right angled pyramid\nPress 2 for right angled number pyramid\nPress 3 for right angled alphabet pyramid\nPress 4 for inverted right angled pyramid  "); 
+            int i,j,t,S;
+            char ch2;
+            scanf("%d",&S);
+            printf("Enter number of rows");
+            scanf("%d",&t);
+            switch(S)
+            {case 1 : printf("To print right angled triangle\n");
+                      for (i=1;i<=t;i++)
+                      {for ( j=1;j<=i;j++)
+                      {printf("*");}
+                      printf("\n");}
+                      break;
+            
+            case 2 :  printf("To print right angled number triangle\n");
+                      for (i=1;i<=t;i++)
+                      {for ( j=1;j<=i;j++)
+                      {printf("%d",i);}
+                      printf("\n");}
+                      break;
+                      
+            case 3 :  printf("To print right angled alphabet triangle\n");
+                      for (i=1;i<=t;i++)
+                      {for ( j=1, ch2= 'A';j<=i;j++,ch2++)
+                      {printf("%c",ch2);}
+                      printf("\n");}
+                      break;
+                      
+            case 4 :  printf("To print inverted right angled triangle\n");
+                      for (i=1;i<=t;i++) 
+                      {for (j=n;j>=i;j--) 
+                      {printf("* "); }
+                      printf("\n");}
+                      break;
+
+                    
+             }
+             
+             
+  default : printf("Invalid input");  
+             
+            
+    
+}
+}
+}
+
+           
+           
+           
+           
+           
+ 
+    
